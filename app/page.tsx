@@ -1,63 +1,46 @@
-import Image from "next/image";
+import { Container } from "@/components/container";
+import { LinkButton } from "@/components/ui/button";
+import { LoginPanel } from "@/components/login-panel";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex min-h-screen flex-1 flex-col bg-slate-950">
+      <main className="flex flex-1 items-center justify-center relative overflow-hidden pb-20">
+        {/* Background Gradients */}
+        <div className="absolute inset-x-0 -top-[5rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-[10rem]">
+          <div className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-indigo-500 to-purple-600 opacity-20 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+
+        <Container className="relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-10">
+            {/* Hero Text */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl font-bold tracking-tight text-transparent bg-gradient-to-br from-white via-slate-200 to-slate-400 bg-clip-text sm:text-7xl mb-6">
+                Discover Unique <br />
+                <span className="text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-300 bg-clip-text">Dining Experiences</span>
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-slate-300 mb-10 max-w-xl mx-auto lg:mx-0">
+                Join minimal, curated dinners hosted by passionate creators. Book your seat at the table and connect over extraordinary food.
+              </p>
+              
+              <div className="flex items-center justify-center lg:justify-start gap-x-6">
+                <div className="hidden lg:block text-sm font-semibold leading-6 text-slate-400">
+                  Trusted by 10,000+ top foodies
+                </div>
+              </div>
+            </div>
+
+            {/* Login Panel */}
+            <div className="flex justify-center lg:justify-end">
+              <LoginPanel />
+            </div>
+          </div>
+        </Container>
+
+        {/* Bottom Background Gradient */}
+        <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+          <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-indigo-400 to-purple-500 opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" />
         </div>
       </main>
     </div>

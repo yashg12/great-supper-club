@@ -1,0 +1,128 @@
+[
+  {
+    "id": "midnight-ramen-01",
+    "title": "Midnight Ramen & Sake",
+    "host": "Aiko Tanaka",
+    "hostName": "Aiko Tanaka",
+    "dateISO": "2026-04-08T19:30:00.000Z",
+    "neighborhood": "SoMa",
+    "city": "San Francisco",
+    "menu": [
+      "Tonkotsu ramen with chashu",
+      "Shishito peppers with yuzu salt",
+      "Seasonal sashimi flight",
+      "Mochi ice cream"
+    ],
+    "price": 65,
+    "priceCents": 6500,
+    "currency": "USD",
+    "seatsAvailable": 6,
+    "seatsLeft": 6,
+    "image": "/images/events/midnight-ramen.svg"
+  },
+  {
+    "id": "apero-table-02",
+    "title": "Aperitivo: Small Plates & Negronis",
+    "host": "Marco Rossi",
+    "hostName": "Marco Rossi",
+    "dateISO": "2026-04-12T01:00:00.000Z",
+    "neighborhood": "Mission",
+    "city": "San Francisco",
+    "menu": [
+      "Olives, marcona almonds",
+      "Burrata with smoked chili honey",
+      "Truffle potato chips",
+      "House negroni (or spritz)"
+    ],
+    "price": 48,
+    "priceCents": 4800,
+    "currency": "USD",
+    "seatsAvailable": 10,
+    "seatsLeft": 10,
+    "image": "/images/events/apero-table.svg"
+  },
+  {
+    "id": "chef-counter-03",
+    "title": "Chef’s Counter: Seasonal Tasting",
+    "host": "Priya Nair",
+    "hostName": "Priya Nair",
+    "dateISO": "2026-04-20T02:00:00.000Z",
+    "neighborhood": "Nob Hill",
+    "city": "San Francisco",
+    "menu": [
+      "Spring pea velouté",
+      "Charred asparagus with miso",
+      "Seared duck with cherry jus",
+      "Citrus tart"
+    ],
+    "price": 92,
+    "priceCents": 9200,
+    "currency": "USD",
+    "seatsAvailable": 4,
+    "seatsLeft": 4,
+    "image": "/images/events/chefs-counter.svg"
+  },
+  {
+    "id": "vegan-feast-04",
+    "title": "Plant-Forward Supper: Family Style",
+    "host": "Jules Kim",
+    "hostName": "Jules Kim",
+    "dateISO": "2026-04-25T01:30:00.000Z",
+    "neighborhood": "Richmond",
+    "city": "San Francisco",
+    "menu": [
+      "Crispy tofu with chili crisp",
+      "Roasted mushrooms with rosemary",
+      "Soba salad with sesame dressing",
+      "Dark chocolate tahini brownies"
+    ],
+    "price": 54,
+    "priceCents": 5400,
+    "currency": "USD",
+    "seatsAvailable": 8,
+    "seatsLeft": 8,
+    "image": "/images/events/plant-forward.svg"
+  },
+  {
+    "id": "coastal-seafood-05",
+    "title": "Coastal Seafood Supper",
+    "host": "Samira Haddad",
+    "hostName": "Samira Haddad",
+    "dateISO": "2026-05-02T01:00:00.000Z",
+    "neighborhood": "Marina",
+    "city": "San Francisco",
+    "menu": [
+      "Citrus-marinated crudo",
+      "Clam chowder (modern, light)",
+      "Herb-roasted salmon with fennel",
+      "Olive oil cake with berries"
+    ],
+    "price": 78,
+    "priceCents": 7800,
+    "currency": "USD",
+    "seatsAvailable": 12,
+    "seatsLeft": 12,
+    "image": "/images/events/coastal-seafood.svg"
+  },
+  {
+    "id": "taco-wine-06",
+    "title": "Tacos & Natural Wine Night",
+    "host": "Elena García",
+    "hostName": "Elena García",
+    "dateISO": "2026-05-07T01:30:00.000Z",
+    "neighborhood": "Dogpatch",
+    "city": "San Francisco",
+    "menu": [
+      "Al pastor tacos with pineapple",
+      "Mushroom carnitas (veg)",
+      "Charred scallion salsa + guac",
+      "Churros with cinnamon sugar"
+    ],
+    "price": 58,
+    "priceCents": 5800,
+    "currency": "USD",
+    "seatsAvailable": 7,
+    "seatsLeft": 7,
+    "image": "/images/events/taco-wine.svg"
+  }
+]

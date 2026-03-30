@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090909"/>
+      <stop offset="1" stop-color="#171717"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 120) rotate(120) scale(560)">
+      <stop stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" rx="48" fill="url(#g)"/>
+  <rect width="1200" height="630" rx="48" fill="url(#r)"/>
+  <g opacity="0.85">
+    <path d="M155 430c90-70 160-70 250 0s160 70 250 0 160-70 250 0" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" stroke-linecap="round"/>
+    <path d="M155 470c90-70 160-70 250 0s160 70 250 0 160-70 250 0" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui" fill="#fff">
+    <text x="72" y="140" font-size="20" opacity="0.7">Great Supper Club</text>
+    <text x="72" y="220" font-size="54" font-weight="700">Coastal Seafood</text>
+    <text x="72" y="340" font-size="22" opacity="0.72">Dark theme placeholder • SVG</text>
+  </g>
+</svg>
