@@ -22,12 +22,6 @@ export default function LandingPage() {
               <p className="mt-6 text-lg leading-8 text-slate-300 mb-10 max-w-xl mx-auto lg:mx-0">
                 Join minimal, curated dinners hosted by passionate creators. Book your seat at the table and connect over extraordinary food.
               </p>
-              
-              <div className="flex items-center justify-center lg:justify-start gap-x-6">
-                <div className="hidden lg:block text-sm font-semibold leading-6 text-slate-400">
-                  Trusted by 10,000+ top foodies
-                </div>
-              </div>
             </div>
 
             {/* Login Panel */}

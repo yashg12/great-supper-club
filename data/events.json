@@ -7,6 +7,7 @@
     "dateISO": "2026-04-10T14:30:00.000Z",
     "neighborhood": "Bandra West",
     "city": "Mumbai",
+    "dietary": "Both",
     "menu": [
       "Paneer Tikka with mint chutney",
       "Butter Chicken (or Paneer Butter Masala)",
@@ -28,6 +29,7 @@
     "dateISO": "2026-04-14T13:00:00.000Z",
     "neighborhood": "Koregaon Park",
     "city": "Pune",
+    "dietary": "Veg",
     "menu": [
       "Pithla Bhakri",
       "Bharli Vangi",
@@ -49,6 +51,7 @@
     "dateISO": "2026-04-18T14:00:00.000Z",
     "neighborhood": "Hauz Khas",
     "city": "Delhi",
+    "dietary": "Both",
     "menu": [
       "Chicken Biryani (or Veg Biryani)",
       "Galouti Kebab (or Hara Bhara Kebab)",
@@ -70,6 +73,7 @@
     "dateISO": "2026-04-22T13:30:00.000Z",
     "neighborhood": "Indiranagar",
     "city": "Bangalore",
+    "dietary": "Veg",
     "menu": [
       "Avial (coconut veggie stew)",
       "Lemon Rice + Papad",
@@ -91,6 +95,7 @@
     "dateISO": "2026-04-28T14:00:00.000Z",
     "neighborhood": "Civil Lines",
     "city": "Delhi",
+    "dietary": "Veg",
     "menu": [
       "Dal Baati Churma",
       "Gatte ki Sabzi",
@@ -112,6 +117,7 @@
     "dateISO": "2026-05-03T04:30:00.000Z",
     "neighborhood": "Jayanagar",
     "city": "Bangalore",
+    "dietary": "Veg",
     "menu": [
       "Masala Dosa + Sambar",
       "Idli with podi",

@@ -1,5 +1,7 @@
 export type CurrencyCode = "USD" | "INR";
 
+export type DietaryPreference = "Veg" | "Non-Veg" | "Both";
+
 export type SupperEvent = {
   id: string;
   title: string;
@@ -8,6 +10,7 @@ export type SupperEvent = {
   dateISO: string;
   neighborhood: string;
   city: string;
+  dietary: DietaryPreference;
   menu: string[];
   price?: number;
   priceCents: number;

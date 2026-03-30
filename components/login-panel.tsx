@@ -27,7 +27,7 @@ export function LoginPanel() {
   return (
     <div className="w-full max-w-md rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 pt-10 shadow-2xl shadow-indigo-500/10 backdrop-blur-xl">
       <h2 className="text-2xl font-semibold text-slate-50 mb-2">Access the Club</h2>
-      <p className="text-sm text-slate-400 mb-8">Enter any email and password to enter the demo.</p>
+    <p className="text-sm text-slate-400 mb-8">Enter any email and password to continue.</p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2 text-left">

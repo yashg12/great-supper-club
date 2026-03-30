@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: "Great Supper Club",
-  description: "A modern supper club booking experience (mock data).",
+  description: "A modern supper club booking experience.",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
 
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

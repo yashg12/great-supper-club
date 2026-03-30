@@ -77,6 +77,7 @@ export function HostDashboardClient({
                 dateISO: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
                 neighborhood: "—",
                 city: "San Francisco",
+                dietary: "Both",
                 menu: parsedMenu,
                 price: priceNumber,
                 priceCents: Math.round(priceNumber * 100),

@@ -25,12 +25,12 @@ export function BookingPanel({ event }: { event: SupperEvent }) {
       </Button>
       {status === "booked" ? (
         <p className="mt-3 text-sm text-slate-400">
-          Success — your booking was saved to localStorage. View it in{" "}
+          Success — your booking is confirmed. View it in{" "}
           <span className="text-slate-100 font-medium">My Bookings</span>.
         </p>
       ) : (
         <p className="mt-3 text-sm text-slate-500">
-          This is a booking simulation — no payment.
+          No payment is collected at booking.
         </p>
       )}
     </div>

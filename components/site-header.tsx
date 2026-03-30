@@ -54,7 +54,7 @@ export function SiteHeader() {
             
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
 
-            {/* Profile Avatar (Dummy) */}
+            {/* Profile Avatar */}
             <div className="relative">
               <button
                 type="button"
@@ -73,6 +73,14 @@ export function SiteHeader() {
                   role="menu"
                   className="absolute right-0 mt-2 w-40 overflow-hidden rounded-xl border border-slate-800/70 bg-slate-950/95 p-1 shadow-xl shadow-black/30 backdrop-blur"
                 >
+                  <Link
+                    role="menuitem"
+                    href="/profile"
+                    onClick={() => setProfileOpen(false)}
+                    className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-200 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    Profile
+                  </Link>
                   <button
                     role="menuitem"
                     type="button"
