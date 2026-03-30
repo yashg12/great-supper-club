@@ -1,4 +1,4 @@
-export type CurrencyCode = "USD";
+export type CurrencyCode = "USD" | "INR";
 
 export type SupperEvent = {
   id: string;

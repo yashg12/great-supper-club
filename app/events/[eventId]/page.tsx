@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BackButton } from "@/components/ui/back-button";
+import { FallbackImg } from "@/components/ui/fallback-img";
 import { getEventById, getAllEvents } from "@/lib/events";
 import { formatEventDate, formatMoneyFromCents } from "@/lib/format";
 import { BookingPanel } from "@/app/events/[eventId]/booking-panel";
@@ -39,13 +39,10 @@ export default async function EventDetailPage({
 
         <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-white/10">
           <div className="relative aspect-[21/9] w-full bg-white/5">
-            <Image
+            <FallbackImg
               src={event.image}
               alt={event.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              priority={false}
+              className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/0 to-black/0" />
           </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Input, Label } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
+import { setDemoAuthEmail } from "@/lib/auth";
 
 export function LoginPanel() {
   const router = useRouter();
@@ -18,6 +19,7 @@ export function LoginPanel() {
     setLoading(true);
     // Simulate network request
     setTimeout(() => {
+      setDemoAuthEmail(email.trim().toLowerCase());
       router.push("/home");
     }, 800);
   };

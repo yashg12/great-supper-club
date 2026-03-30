@@ -2,14 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
+import { clearDemoAuth } from "@/lib/auth";
 
 const navLinkClass =
   "text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200";
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const router = useRouter();
   const isLanding = pathname === "/";
+  const [profileOpen, setProfileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/50 bg-slate-950/70 backdrop-blur-xl">
@@ -51,11 +55,39 @@ export function SiteHeader() {
             <div className="h-6 w-px bg-slate-800 hidden sm:block" />
 
             {/* Profile Avatar (Dummy) */}
-            <button className="relative h-8 w-8 overflow-hidden rounded-full bg-slate-800 ring-2 ring-slate-800 transition-all hover:ring-indigo-500 shadow-sm">
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 text-xs font-medium text-indigo-100">
-                GC
-              </div>
-            </button>
+            <div className="relative">
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={profileOpen}
+                onClick={() => setProfileOpen((v) => !v)}
+                className="relative h-8 w-8 overflow-hidden rounded-full bg-slate-800 ring-2 ring-slate-800 transition-all hover:ring-indigo-500 shadow-sm"
+              >
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 text-xs font-medium text-indigo-100">
+                  GC
+                </div>
+              </button>
+
+              {profileOpen ? (
+                <div
+                  role="menu"
+                  className="absolute right-0 mt-2 w-40 overflow-hidden rounded-xl border border-slate-800/70 bg-slate-950/95 p-1 shadow-xl shadow-black/30 backdrop-blur"
+                >
+                  <button
+                    role="menuitem"
+                    type="button"
+                    onClick={() => {
+                      clearDemoAuth();
+                      setProfileOpen(false);
+                      router.push("/");
+                    }}
+                    className="w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-200 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    Logout
+                  </button>
+                </div>
+              ) : null}
+            </div>
           </div>
         )}
       </div>

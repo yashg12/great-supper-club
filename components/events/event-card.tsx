@@ -1,6 +1,6 @@
 import type { SupperEvent } from "@/lib/types";
 import Link from "next/link";
-import Image from "next/image";
+import { FallbackImg } from "@/components/ui/fallback-img";
 import { formatMoneyFromCents } from "@/lib/format";
 
 export function EventCard({ event }: { event: SupperEvent }) {
@@ -9,13 +9,10 @@ export function EventCard({ event }: { event: SupperEvent }) {
       href={`/events/${event.id}`}
       className="group relative block aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-900 shadow-md shadow-indigo-900/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-[0_12px_40px_rgba(79,70,229,0.25)] focus:outline-none"
     >
-      <Image
+      <FallbackImg
         src={event.image}
         alt={event.title}
-        fill
-        className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        priority={false}
+        className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
       />
       {/* Gradient overlays for readability and fintech glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />

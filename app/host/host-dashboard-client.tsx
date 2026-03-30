@@ -83,7 +83,7 @@ export function HostDashboardClient({
                 currency: "USD",
                 seatsAvailable: seatsNumber,
                 seatsLeft: seatsNumber,
-                image: "/images/events/chefs-counter.svg",
+                image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80",
               };
 
               setEvents((prev) => [newEvent, ...prev]);

@@ -1,5 +1,4 @@
 import { Container } from "@/components/container";
-import { LinkButton } from "@/components/ui/button";
 import { LoginPanel } from "@/components/login-panel";
 
 export default function LandingPage() {
