@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { SupperEvent } from "@/lib/types";
 import { formatEventDate, formatMoneyFromCents } from "@/lib/format";
+import { useRuntimeEvents } from "@/components/runtime/runtime-events";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,8 +32,11 @@ export function HostDashboardClient({
 }: {
   initialEvents: SupperEvent[];
 }) {
+  const { addEvent } = useRuntimeEvents();
   const [events, setEvents] = useState<SupperEvent[]>(initialEvents);
   const [title, setTitle] = useState("");
+  const [city, setCity] = useState("Mumbai");
+  const [neighborhood, setNeighborhood] = useState("");
   const [menuText, setMenuText] = useState("");
   const [price, setPrice] = useState("");
   const [seats, setSeats] = useState("");
@@ -45,13 +49,14 @@ export function HostDashboardClient({
     const seatsNumber = Number(seats);
     return (
       title.trim().length >= 3 &&
+      city.trim().length >= 2 &&
       parsedMenu.length >= 1 &&
       Number.isFinite(priceNumber) &&
       priceNumber > 0 &&
       Number.isInteger(seatsNumber) &&
       seatsNumber > 0
     );
-  }, [title, parsedMenu, price, seats]);
+  }, [title, city, parsedMenu, price, seats]);
 
   return (
     <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -75,8 +80,8 @@ export function HostDashboardClient({
                 host: "You",
                 hostName: "You",
                 dateISO: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
-                neighborhood: "—",
-                city: "San Francisco",
+                neighborhood: neighborhood.trim() || "—",
+                city: city.trim(),
                 dietary: "Both",
                 menu: parsedMenu,
                 price: priceNumber,
@@ -88,7 +93,10 @@ export function HostDashboardClient({
               };
 
               setEvents((prev) => [newEvent, ...prev]);
+              addEvent(newEvent);
               setTitle("");
+              setCity("Mumbai");
+              setNeighborhood("");
               setMenuText("");
               setPrice("");
               setSeats("");
@@ -104,6 +112,27 @@ export function HostDashboardClient({
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g. Pasta night"
               />
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="city">City</Label>
+                <Input
+                  id="city"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="e.g. Mumbai"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="neighborhood">Neighborhood (optional)</Label>
+                <Input
+                  id="neighborhood"
+                  value={neighborhood}
+                  onChange={(e) => setNeighborhood(e.target.value)}
+                  placeholder="e.g. Mission District"
+                />
+              </div>
             </div>
 
             <div className="space-y-2">
@@ -145,7 +174,7 @@ export function HostDashboardClient({
 
             {created ? (
               <p className="text-xs text-slate-400">
-                Event created in local state (no backend).
+                Event created. It will appear on Home in this session.
               </p>
             ) : (
               <p className="text-xs text-slate-500">No backend: events aren’t persisted.</p>

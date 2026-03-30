@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { AppProviders } from "@/components/runtime/app-providers";
 
 export const metadata: Metadata = {
   title: "Great Supper Club",
@@ -26,9 +27,11 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/80 to-slate-950" />
         </div>
 
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <AppProviders>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </AppProviders>
       </body>
     </html>
   );

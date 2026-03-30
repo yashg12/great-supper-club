@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import type { SupperEvent } from "@/lib/types";
+import { useRuntimeEvents } from "@/components/runtime/runtime-events";
 import { EventGrid } from "@/components/events/event-grid";
 import { EmptyState } from "@/components/empty-state";
 
@@ -17,14 +18,20 @@ const DemoLeafletMap = dynamic(
 );
 
 export function HomeSearchPanel({ events }: { events: SupperEvent[] }) {
+  const { events: runtimeEvents } = useRuntimeEvents();
   const [query, setQuery] = useState("");
   const [city, setCity] = useState<City>("All");
   const [dietary, setDietary] = useState<Dietary>("Both");
 
+  const allEvents = useMemo(() => {
+    if (runtimeEvents.length === 0) return events;
+    return [...runtimeEvents, ...events];
+  }, [runtimeEvents, events]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
 
-    return events.filter((e) => {
+    return allEvents.filter((e) => {
       const matchesQuery = q.length === 0 || e.title.toLowerCase().includes(q);
       const matchesCity = city === "All" || e.city === city;
 
@@ -35,7 +42,7 @@ export function HomeSearchPanel({ events }: { events: SupperEvent[] }) {
 
       return matchesQuery && matchesCity && matchesDietary;
     });
-  }, [events, query, city, dietary]);
+  }, [allEvents, query, city, dietary]);
 
   return (
     <div className="space-y-6">
@@ -151,7 +158,7 @@ export function HomeSearchPanel({ events }: { events: SupperEvent[] }) {
           <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
             <p className="text-xs text-slate-400">
               Showing <span className="font-semibold text-slate-200">{filtered.length}</span> of{" "}
-              <span className="font-semibold text-slate-200">{events.length}</span>
+              <span className="font-semibold text-slate-200">{allEvents.length}</span>
             </p>
             <button
               type="button"
